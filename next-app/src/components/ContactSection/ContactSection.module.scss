@@ -1,0 +1,49 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 41px;
+    border-bottom: 1px solid $dark-gray;
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .title {
+            font-weight: 590;
+            font-size: 40px;
+            line-height: 38px;
+            color: $white;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 150%;
+            color: $secondary;
+        }
+    }
+
+    .btnsContainer {
+        min-width: 270px;
+        display: flex;
+        gap: 12px;
+
+        .about {
+            color: $light-gray;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .btnsContainer {
+            align-self: flex-start;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .text {
+        max-width: 160px;
+        font-size: 16px;
+        line-height: 150%;
+        color: $light-green;
+    }
+
+    .icons {
+        display: flex;
+        gap: 24px;
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        padding-top: 33px;
+        border-top: 1px solid $dark-gray;
+
+        .text {
+            max-width: fit-content;
+        }
+    }
+}

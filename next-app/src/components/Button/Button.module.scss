@@ -12,6 +12,7 @@
     line-height: 19px;
     font-weight: 590;
     text-decoration: none;
+    text-align: center;
     color: $dark-green;
     background-color: transparent;
 }
@@ -28,4 +29,8 @@
 .gray {
     background-color: $ultra-light-gray;
     color: $dark-gray;
+}
+
+.transparentGray {
+    color: $light-gray
 }

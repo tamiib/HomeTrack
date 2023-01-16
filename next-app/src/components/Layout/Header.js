@@ -1,4 +1,4 @@
-import logo from "@assets/logo.png";
+import logo from "@assets/images/logo.png";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -17,6 +17,11 @@ const Header = ({ activeTab }) => {
           />
         </Link>
         <Navigation activeTab={activeTab}/>
+        <div className="hamburger">
+            <div className="bar"/>
+            <div className="bar"/>
+            <div className="bar"/>
+        </div>
       </nav>
     </header>
   );

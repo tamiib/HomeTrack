@@ -1,0 +1,29 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .headLink {
+        font-weight: 590;
+        font-size: 16px;
+        line-height: 150%;
+        color: $primary;
+        text-decoration: none;
+    }
+
+    .otherLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .otherLink {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 150%;
+            text-decoration: none;
+            color: $white;
+        }
+    }
+}

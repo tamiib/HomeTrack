@@ -2,7 +2,7 @@
 
 .navigation {
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: space-between;
 
     .navLinks {
@@ -22,6 +22,12 @@
     }
 
     .btnsContainer {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .navigation {
         display: flex;
     }
 }

@@ -1,0 +1,31 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .description {
+            font-size: 14px;
+            line-height: 150%;
+            color: $white;
+        }
+    }
+
+    .linksContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(137px, 1fr));
+        gap: 32px;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        grid-template-columns: 1fr 2.3fr;
+    }
+}
