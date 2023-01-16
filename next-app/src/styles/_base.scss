@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import './globals.scss';
+@import './variables.scss';
+@import './typography.scss';
+
+// layout
+@import './Layout/Layout.scss';
+@import './Layout/Header.scss';
+@import './Layout/Footer.scss';

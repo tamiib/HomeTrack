@@ -1,0 +1,27 @@
+@import "@styles/variables.scss";
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .navLinks {
+        list-style: none;
+        display: flex;
+        gap: 80px;
+
+        .navLink {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 19px;
+            color: $dark-gray;
+            text-decoration: none;
+            padding: 10px 24px;
+        }
+    }
+
+    .btnsContainer {
+        display: flex;
+    }
+}

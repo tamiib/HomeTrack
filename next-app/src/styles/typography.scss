@@ -1,0 +1,54 @@
+@import "./variables.scss";
+
+body,
+main {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(32px, 10vw, 64px);
+    line-height: clamp(120%, 10vw, 64px);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(24x, 10vw, 40px);
+    line-height: 40px;
+    font-weight: 590;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 590;
+    color: $dark-green;
+}
+
+p {
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-gray;
+}
+
+label {
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark-gray;
+}
+
+input {
+    font-size: 16px;
+    line-height: 19px;
+    color: $ligth-gray;
+}
+
+.pageName {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 590;
+    color: $dark-green;
+    letter-spacing: 0.35em;
+}

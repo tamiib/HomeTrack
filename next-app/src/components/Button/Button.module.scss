@@ -1,0 +1,31 @@
+@import "@styles/variables.scss";
+
+.btn {
+    width: fit-content;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 24px; 
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 590;
+    text-decoration: none;
+    color: $dark-green;
+    background-color: transparent;
+}
+
+.lightGreen {
+    background-color: $secondary;
+    color: $dark-gray;
+}
+
+.green {
+    background-color: $primary;
+}
+
+.gray {
+    background-color: $ultra-light-gray;
+    color: $dark-gray;
+}
