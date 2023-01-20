@@ -1,0 +1,24 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+
+    .value {
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 72px;
+        color: $primary;
+        margin-bottom: 4px;
+    }
+
+    .measure {
+        font-weight: 590;
+        font-size: 16px;
+        line-height: 150%;
+        color: $dark-green;
+    }
+}
