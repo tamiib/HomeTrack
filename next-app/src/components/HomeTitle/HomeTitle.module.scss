@@ -1,0 +1,66 @@
+@import "@styles/variables.scss";
+
+.section {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+
+    .house {
+        position: relative;
+        width: 100%;
+        max-width: 910px;
+        padding-bottom: 2%;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+        padding-top: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding-inline: 24px;
+        background: linear-gradient(360deg, #E3FFFA 7.81%, rgba(215, 255, 248, 0) 100%);
+        border-radius: 68px;
+
+        .title {
+            position: relative;
+            text-align: center;
+            max-width: 739px;
+            z-index: 2;
+        }
+
+        .searchContainer {
+            position: relative;
+            width: 100%;
+            max-width: 582px;
+            z-index: 2;
+        }
+
+        .image {
+            position: relative;
+            width: 100%;
+            max-width: 1187px;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .section {
+        .content {
+            border-radius: 312.5px;
+
+            .image {
+                margin-top: -10%;
+                margin-bottom: -20px;
+            }
+        }
+    }
+}

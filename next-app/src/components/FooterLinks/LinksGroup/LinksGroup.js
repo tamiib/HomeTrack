@@ -10,7 +10,7 @@ const LinksGroup = ({ linksGroup }) => {
       </Link>
       <div className={styles.otherLinks}>
         {linksGroup.otherLinks.map((link) => (
-          <Link className={styles.otherLink} href={link.to}>
+          <Link className={styles.otherLink} href={link.to} key={`other-link-${link.label}`}>
             {link.label}
           </Link>
         ))}

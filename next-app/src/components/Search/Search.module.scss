@@ -1,0 +1,46 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    .inputContainer {
+        display: grid;
+        grid-template-columns: 1fr 24px;
+        gap: 8px;
+        align-items: center;
+        padding: 10px 16px;
+        border: 2px solid $ultra-light-gray;
+        border-radius: 4px;
+
+        .input {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: $black;
+            background-color: transparent;
+            border: none;
+            
+            &::placeholder {
+                color: $light-gray;
+            }
+        }
+
+        .input:focus {
+            outline: none;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .container {
+        grid-template-columns: 1fr 103px;
+        gap: 16px;
+    }
+}

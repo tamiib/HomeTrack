@@ -22,7 +22,7 @@ const FooterLinks = () => {
       </div>
       <div className={styles.linksContainer}>
         {LINKS_GROUPS.map((group) => (
-          <LinksGroup linksGroup={group} />
+          <LinksGroup linksGroup={group} key={`group-${group.headLink.label}`}/>
         ))}
       </div>
     </div>
