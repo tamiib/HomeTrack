@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Link from "next/link";
 import Button from "../Button/Button";
 import { LINKS } from "./constats";
@@ -11,7 +12,13 @@ const Navigation = ({ activeTab }) => {
       <ul className={styles.navLinks}>
         {LINKS.map((link) => (
           <li>
-            <Link href={link.to} className={styles.navLink}>
+            <Link
+              href={link.to}
+              className={clsx({
+                [styles.navLink]: true,
+                [styles.active]: link.label.toLowerCase() === activeTab,
+              })}
+            >
               {link.label}
             </Link>
           </li>

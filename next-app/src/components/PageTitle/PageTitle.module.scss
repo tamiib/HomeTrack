@@ -1,0 +1,67 @@
+@import "@styles/variables.scss";
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 40px 0px;
+
+    .text {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding-inline: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .titleContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        p {
+            width: 100%;
+            font-size: 18px;
+            line-height: 130%;
+        }
+    }
+
+    .image {
+        position: relative;
+        width: 100%;
+        margin-right: -24px;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .section {
+        flex-direction: row;
+        padding: 120px 55px 0px 24px;
+
+        .text {
+            padding-inline: 0px;
+
+            .titleContainer {
+                max-width: 650px;
+            }
+
+            p {
+                max-width: 435px;
+                line-height: 150%;
+            }
+        }
+
+        .image {
+            margin-top: -55px;
+        }
+
+        &.imageRight {
+            .image {
+                margin-right: -55px;
+            }
+        }
+    }
+}
