@@ -1,0 +1,62 @@
+@import "@styles/variables.scss";
+
+.section {
+    position: relative;
+    width: 100%;
+    max-width: 1120px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 120px 24px;
+    margin: 0 auto;
+
+    .topContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .btnContainer {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .section {
+        .cards {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .section {
+        .topContainer {
+            .btnContainer {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: translateX(0%);
+            }
+        }
+        .cards {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

@@ -4,19 +4,9 @@
     position: relative;
     width: 100%;
     object-fit: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
-
-    .house {
-        position: relative;
-        width: 100%;
-        max-width: 910px;
-        padding-bottom: 2%;
-    }
 
     .content {
         width: 100%;
