@@ -35,7 +35,7 @@ const CardsSection = ({ location, title }) => {
       <div className={styles.topContainer}>
         <div className={styles.text}>
           <div className="subtitle">{location}</div>
-          <h2 className={styles.title}>{title}</h2>
+          <h2>{title}</h2>
         </div>
         <div className={styles.btnContainer}>
           <Button styleClass="gray" style={buttonWidth} className={styles.btn}>

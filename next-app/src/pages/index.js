@@ -9,6 +9,7 @@ export default function Home() {
       <HomeTitle />
       <CardsSection location="SUNNY DALMATIA" title="Recently added"/>
       <Statistics />
+      <CardsSection location="SPLIT AREA" title="Our picks"/>
     </Layout>
   </>;
 }
