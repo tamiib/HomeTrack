@@ -10,8 +10,8 @@ const Navigation = ({ activeTab }) => {
     <div className={styles.navigation}>
       <div />
       <ul className={styles.navLinks}>
-        {LINKS.map((link) => (
-          <li>
+        {LINKS.map((link, index) => (
+          <li key={`nav-link__${index}`}>
             <Link
               href={link.to}
               className={clsx({

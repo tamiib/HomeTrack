@@ -1,5 +1,7 @@
 import desktopImage from "@assets/images/explore.png";
 import mobileImage from "@assets/images/explore-mobile.png";
+import SearchSection from "@/components/SearchSection/SearchSection";
+import CardsSection from "@/components/CardsSection/CardsSection";
 const { default: Layout } = require("@/components/Layout/Layout");
 const { default: PageTitle } = require("@/components/PageTitle/PageTitle");
 
@@ -15,6 +17,10 @@ const Explore = () => {
         mobileImage={mobileImage}
         styleClass="imageRight"
       />
+      <SearchSection placeholder="Try: Villa with pool in Split"/>
+      <CardsSection title="Recently added" location="sunny dalmatia"/>
+      <CardsSection title="Our picks" location="thousand islands"/>
+      <CardsSection title="Mostly viewed" location="makarska riviera"/>
     </Layout>
   );
 };

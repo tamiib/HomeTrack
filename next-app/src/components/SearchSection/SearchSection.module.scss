@@ -1,0 +1,21 @@
+@import "@styles/variables.scss";
+
+.section {
+    width: 100%;
+    padding: 42px 24px 0px;
+
+    .wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .section {
+        padding: 65px 0px 0px;
+
+        .wrapper {
+            max-width: 800px;
+        }
+    }
+}

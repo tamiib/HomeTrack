@@ -34,7 +34,7 @@ const CardsSection = ({ location, title }) => {
     <section id={`section-${title}`} className={styles.section}>
       <div className={styles.topContainer}>
         <div className={styles.text}>
-          <div className="subtitle">{location}</div>
+          <div className="subtitle">{location.toUpperCase()}</div>
           <h2>{title}</h2>
         </div>
         <div className={styles.btnContainer}>
