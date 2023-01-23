@@ -39,10 +39,13 @@
 @media screen and (min-width: $tablet) {
     .section {
         flex-direction: row;
+        justify-content: space-around;
         padding: 120px 55px 0px 24px;
+        max-height: 500px;
 
         .text {
             padding-inline: 0px;
+            margin: 0;
 
             .titleContainer {
                 max-width: 650px;
@@ -59,6 +62,11 @@
         }
 
         &.imageRight {
+            justify-content: space-between;
+
+            .text {
+                margin: 0 auto;
+            }
             .image {
                 margin-right: -55px;
             }

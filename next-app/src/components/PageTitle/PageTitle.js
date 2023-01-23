@@ -18,7 +18,6 @@ const PageTitle = ({
   const desktopView = useMedia({minWidth: 768})
 
   const image = desktopView ? desktopImage : mobileImage;
-
   return (
     <section id="page-title" className={sectionStyle}>
       <div className={styles.text}>
@@ -28,12 +27,13 @@ const PageTitle = ({
         </div>
         <p>{description}</p>
       </div>
-      <div className={styles.image}>
+      <div className={styles.image} style={{maxWidth: `${desktopView ? `${image.width}px` : "100%"}`}}>
         <Image
           src={image.src}
           layout="responsive"
           width={`${image.width}px`}
           height={`${image.height}px`}
+          className="realImage"
         />
       </div>
     </section>

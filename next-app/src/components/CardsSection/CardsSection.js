@@ -44,8 +44,8 @@ const CardsSection = ({ location, title }) => {
         </div>
       </div>
       <ul className={styles.cards}>
-        {DUMMY_DATA.map((house) => (
-          <Card {...house} />
+        {DUMMY_DATA.map((house, index) => (
+          <Card {...house} key={`${title}-house-${index}`}/>
         ))}
       </ul>
     </section>

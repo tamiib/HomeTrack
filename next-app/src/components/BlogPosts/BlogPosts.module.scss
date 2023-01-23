@@ -1,0 +1,27 @@
+@import "@styles/variables.scss";
+
+.section {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 24px 24px;
+
+    .list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .section {
+        padding: 120px 24px 32px;
+
+        .list {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 24px;
+            row-gap: 120px;
+        }
+    }
+}

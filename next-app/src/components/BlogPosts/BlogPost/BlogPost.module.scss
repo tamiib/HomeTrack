@@ -1,0 +1,57 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $ultra-light-gray;
+    border-radius: 4px;
+
+    .image {
+        width: 100%;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+        padding: 24px;
+
+        .titleContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .title {
+                font-size: clamp(24px, 5vw, 40px);
+                line-height: clamp(110%, 6vw, 100%);
+            }
+        }
+
+        .button {
+            order: 2;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .container {
+        .content {
+            grid-template-columns: 1fr 132px;
+            column-gap: 24px;
+            row-gap: 16px;
+
+            .titleContainer {
+                max-width: 344px;
+            }
+
+            .button {
+                order: 0;
+            }
+
+            .description {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+    }
+}
