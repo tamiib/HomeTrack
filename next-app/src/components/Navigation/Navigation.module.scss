@@ -25,10 +25,10 @@
             &.active,
             &:hover {
                 text-shadow:
-                -.4px -.4px 0 $dark-green,
-                .4px -.4px 0 $dark-green,
-                -.4px .4px 0 $dark-green,
-                .4px .4px 0 $dark-green;
+                -.33px -.33px 0 $dark-green,
+                .33px -.33px 0 $dark-green,
+                -.33px .33px 0 $dark-green,
+                .33px .33px 0 $dark-green;
                 color: $dark-green;
                 border-bottom: 1px solid $primary;
             }

@@ -33,7 +33,7 @@
     }
 }
 
-@media screen and (min-width: $tablet) {
+@media screen and (min-width: $desktop) {
     .container {
         .content {
             grid-template-columns: 1fr 132px;
