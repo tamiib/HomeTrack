@@ -1,3 +1,4 @@
+import closeIcon from "@assets/icons/close-icon.svg";
 import styles from "./FormInput.module.scss";
 
 const FormInput = ({ registerProps, type, placeholder, label }) => {
@@ -8,12 +9,15 @@ const FormInput = ({ registerProps, type, placeholder, label }) => {
       <label htmlFor={formattedLabel} className={styles.label}>
         {label}
       </label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        id={formattedLabel}
-        {...registerProps}
-      />
+      <div className={styles.inputContainer}>
+        <input
+          type={type}
+          placeholder={placeholder}
+          id={formattedLabel}
+          {...registerProps}
+        />
+        <img src={closeIcon.src} width="24px" height="24px" className={styles.icon} />
+      </div>
     </div>
   );
 };

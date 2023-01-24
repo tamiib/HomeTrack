@@ -24,7 +24,7 @@ const ContactForm = () => {
         <FormInput
           label={"Listing code *"}
           placeholder="4 digit number on listing detail page"
-          type="listingCode"
+          type="number"
           registerProps={{ ...register("listingCode", { required: true }) }}
         />
         <FormInput
