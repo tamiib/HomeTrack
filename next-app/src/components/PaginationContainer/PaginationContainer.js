@@ -3,9 +3,11 @@ import styles from "./PaginationContainer.module.scss";
 import React from "react";
 import { styled } from "@mui/system";
 import { useRouter } from "next/router";
+import { useMedia } from "use-media";
 
 const PaginationContainer = ({ currentPage }) => {
   const router = useRouter();
+  const desktopView = useMedia({minWidth: 768});
 
   const StyledPagination = styled(Pagination)({
     "& .MuiPaginationItem-root": {
@@ -18,39 +20,44 @@ const PaginationContainer = ({ currentPage }) => {
       backgroundColor: "#F3FFFD",
       color: "#22C55E",
       fontSize: "14px",
-      lineHeight: "20px"
+      lineHeight: "20px",
     },
     "& .MuiPagination-ul li:last-child": {
-        marginLeft: "16px",
+      marginLeft: "8px",
     },
     "& .MuiPagination-ul li:last-child button::before": {
-        content: "'Next'",
-        marginRight: "8px",
+      content: "'Next'",
+      marginRight: "8px",
     },
     "& .MuiPagination-ul li:first-child": {
-        marginRight: "16px",
+      marginRight: "8px",
     },
     "& .MuiPagination-ul li:first-child button::after": {
-        content: "'Previous'",
-        marginLeft: "8px",
-    }
+      content: "'Previous'",
+      marginLeft: "8px",
+    },
+    "& .MuiPagination-ul li button": {
+      padding: "8px",
+    },
   });
 
   const handleChange = (e, value) => {
-    if(value === 1) {
+    if (value === 1) {
       router.push(`/blog`);
     } else {
       router.push(`/blog/page/${value}`);
     }
-  }
+  };
+
+  const countsValue = desktopView ? 1 : 0;
 
   return (
     <div className={styles.container}>
       <StyledPagination
         count={20}
         page={+currentPage}
-        boundaryCount={1}
-        siblingCount={1}
+        boundaryCount={countsValue}
+        siblingCount={countsValue}
         shape="rounded"
         onChange={handleChange}
       />
