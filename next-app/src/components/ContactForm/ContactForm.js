@@ -5,6 +5,7 @@ import FormInput from "./FormInput/FormInput";
 import Button from "../Button/Button";
 import formImage from "@assets/images/contactForm.png";
 import { INPUTS } from "./constants";
+import { sendContactForm } from "@/lib/api";
 
 const defaultValues = {
   email: "",
@@ -21,10 +22,11 @@ const ContactForm = () => {
     setValue,
     setFocus,
     formState: { errors, isSubmitted },
-  } = useForm({ defaultValues });
+  } = useForm({ defaultValues: defaultValues });
 
-  const onSave = () => {
-    reset({ defaultValues });
+  const onSave = async (formValues) => {
+    await sendContactForm(formValues);
+    reset(defaultValues);
   };
 
   return (
