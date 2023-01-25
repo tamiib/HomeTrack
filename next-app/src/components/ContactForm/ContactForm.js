@@ -2,39 +2,63 @@ import Image from "next/legacy/image";
 import { useForm } from "react-hook-form";
 import styles from "./ContactForm.module.scss";
 import FormInput from "./FormInput/FormInput";
-import formImage from '@assets/images/contactForm.png';
+import Button from "../Button/Button";
+import formImage from "@assets/images/contactForm.png";
+import { INPUTS } from "./constants";
+
+const defaultValues = {
+  email: "",
+  listingCode: "",
+  name: "",
+  message: "",
+};
 
 const ContactForm = () => {
   const {
-    register,
     handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+    control,
+    reset,
+    setValue,
+    setFocus,
+    formState: { errors, isSubmitted },
+  } = useForm({ defaultValues });
+
+  const onSave = () => {
+    reset({ defaultValues });
+  };
 
   return (
     <section id="contact-form" className={styles.section}>
-      <form className={styles.form}>
-        <FormInput
-          label={"Email *"}
-          placeholder="example@mail.com"
-          type="email"
-          registerProps={{ ...register("email", { required: true }) }}
-        />
-        <FormInput
-          label={"Listing code *"}
-          placeholder="4 digit number on listing detail page"
-          type="number"
-          registerProps={{ ...register("listingCode", { required: true }) }}
-        />
-        <FormInput
-          label={"Name *"}
-          placeholder="John Smith"
-          type="name"
-          registerProps={{ ...register("name", { required: true }) }}
-        />
-      </form>
-      <div className={styles.image} style={{maxWidth: `${formImage.width}px`}}>
+      <div className={styles.formContainer}>
+        <p className={styles.description}>
+          We will try to respond you inside 24 hour time frame.
+          <br />
+          All of the fields marked with '*' are mandatory.
+        </p>
+
+        <form className={styles.form} onSubmit={handleSubmit(onSave)}>
+          {INPUTS.map((input) => (
+            <FormInput
+              key={input.name}
+              control={control}
+              setValue={setValue}
+              setFocus={setFocus}
+              formSubmitted={isSubmitted}
+              error={errors[input.name]}
+              {...input}
+            />
+          ))}
+          <div className={styles.btnContainer}>
+            <Button styleClass="green" type="submit" style={{ width: "100%" }}>
+              Send inquiry
+            </Button>
+          </div>
+        </form>
+      </div>
+      <div
+        className={styles.image}
+        style={{ maxWidth: `${formImage.width}px` }}
+      >
         <Image
           src={formImage.src}
           alt="Contact form image"

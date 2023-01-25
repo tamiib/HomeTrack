@@ -1,41 +1,55 @@
 @import "@styles/variables.scss";
 
 .section {
-    width: 100%;
-    max-width: 1120px;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 24px;
+  width: 100%;
+  max-width: 1168px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
 
+  .formContainer {
+    .description {
+      font-size: 16px;
+      line-height: 150%;
+      color: $dark-gray;
+      margin-bottom: 24px;
+    }
     .form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
+  }
 
-    .image {
-        position: relative;
-        width: 100%;
-        display: none;
-    }
-
+  .image {
+    position: relative;
+    width: 100%;
+    display: none;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .section {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 80px;
-        padding: 120px 24px;
-        margin: 0 auto;
+  .section {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 120px 24px;
+    margin: 0 auto;
 
-        .form {
-            max-width: 520px;
-        }
+    .formContainer {
+      width: 100%;
+      max-width: 520px;
 
-        .image {
-            display: block;
+      .form {
+        .btnContainer {
+          max-width: 147px;
         }
+      }
     }
+
+    .image {
+      display: block;
+    }
+  }
 }

@@ -1,0 +1,21 @@
+@import "@styles/variables.scss";
+
+.icon {
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    transition: 0.4s;
+    border-radius: 50%;
+    padding: 4px;
+    z-index: -1;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $ultra-light-gray;
+    }
+
+    &.show {
+        z-index: 1;
+        opacity: 1;
+    }
+}

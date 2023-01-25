@@ -16,6 +16,10 @@
     text-align: center;
     color: $dark-green;
     background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .lightGreen {

@@ -5,30 +5,71 @@
   flex-direction: column;
   gap: 8px;
 
-  .label {
-    font-size: 14px;
-    line-height: 17px;
-    color: $dark-gray;
+  .text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .label {
+      min-width: fit-content;
+      font-size: 14px;
+      line-height: 17px;
+      color: $dark-gray;
+    }
+
+    .error {
+      max-width: 60%;
+      color: red;
+      font-size: 14px;
+      line-height: 17px;
+      opacity: 0;
+      transition: 0.4s;
+
+      &.show {
+        opacity: 1;
+      }
+    }
   }
 
   .inputContainer {
+    position: relative;
     width: 100%;
+    min-height: 44px;
+    min-width: 290px;
     display: flex;
     align-items: center;
     padding: 10px 16px;
     border: 2px solid $ultra-light-gray;
     border-radius: 4px;
 
-    input {
+    input,
+    textarea {
       width: 100%;
       outline: none;
       border: none;
       font-size: 16px;
       line-height: 19px;
+      font-family: 'DM Sans', sans-serif;;
+      color: $dark-green;
+      background-color: transparent;
     }
 
-    input::placeholder {
+    input {
+      width: calc(100% - 32px);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      white-space: pre-line;
       color: $light-gray;
+    }
+
+    /* Remove background on autoComplete in Chrome */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
     }
 
     // disable arrows on number input Chrome, Edge, Safari
@@ -41,15 +82,6 @@
     // disable arrows on number input Firefox
     input[type="number"] {
       -moz-appearance: textfield;
-    }
-
-    .icon {
-      opacity: 0;
-      transition: 0.4s;
-    }
-
-    input:focus + .icon {
-      opacity: 1;
     }
   }
 }
