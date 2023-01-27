@@ -4,7 +4,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@assets/*": ["/public/assets/*"],
-      "@styles/*": ["./src/styles/*"],
+      "@styles/*": ["@/styles/*"],
+      "@shared/*": ["@/shared/*"],
     }
   }
 }

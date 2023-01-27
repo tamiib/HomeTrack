@@ -4,8 +4,10 @@ import PageTitle from "@/components/PageTitle/PageTitle";
 import Layout from "@/components/Layout/Layout";
 import BlogPosts from "@/components/BlogPosts/BlogPosts";
 import PaginationContainer from "@/components/PaginationContainer/PaginationContainer";
+import { getPaginatedPosts, getTotalPostsNumber } from "@/lib/api";
+import { CONSTANTS } from "@/shared/constants";
 
-const BlogsPage = ({ currentPage }) => {
+const BlogsPage = ({ currentPage, blogPosts, totalPages }) => {
   return (
     <>
       <Layout activeTab="blog">
@@ -16,30 +18,41 @@ const BlogsPage = ({ currentPage }) => {
           desktopImage={desktopImage}
           mobileImage={mobileImage}
         />
-        <BlogPosts />
-        <PaginationContainer currentPage={currentPage}/>
+        <BlogPosts blogPosts={blogPosts} />
+        <PaginationContainer
+          currentPage={currentPage}
+          totalPages={totalPages}
+        />
       </Layout>
     </>
   );
 };
 
 export async function getStaticProps(context) {
-    const { params } = context;
-    const pageNumber = params.pageNumber;
+  const { params } = context;
+  const pageNumber = params.pageNumber;
 
-    return {
-        props: {currentPage: pageNumber},
-    }
+  const data = await getPaginatedPosts(pageNumber);
+  const totalPages = Math.ceil(data.total / CONSTANTS.pagination.pageSize);
+
+  return {
+    props: { currentPage: pageNumber, blogPosts: data.items, totalPages },
+  };
 }
 
 export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { pageNumber: "2" } },
-            { params: { pageNumber: "3" } }
-        ],
-        fallback: false,
-    };
+  const totalPostsNumber = await getTotalPostsNumber();
+  const totalPages = Math.ceil(totalPostsNumber / CONSTANTS.pagination.pageSize);
+  let paths = [];
+
+  for(let page = 2; i <= totalPages; page++) {
+    paths.push({ params: page.toString() });
+  }
+
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export default BlogsPage;

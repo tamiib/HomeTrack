@@ -5,7 +5,7 @@ import { styled } from "@mui/system";
 import { useRouter } from "next/router";
 import { useMedia } from "use-media";
 
-const PaginationContainer = ({ currentPage }) => {
+const PaginationContainer = ({ currentPage, totalPages }) => {
   const router = useRouter();
   const desktopView = useMedia({minWidth: 768});
 
@@ -22,17 +22,17 @@ const PaginationContainer = ({ currentPage }) => {
       fontSize: "14px",
       lineHeight: "20px",
     },
-    "& .MuiPagination-ul li:last-child": {
+    "& .MuiPagination-ul li:last-of-type": {
       marginLeft: "8px",
     },
-    "& .MuiPagination-ul li:last-child button::before": {
+    "& .MuiPagination-ul li:last-of-type button::before": {
       content: "'Next'",
       marginRight: "8px",
     },
-    "& .MuiPagination-ul li:first-child": {
+    "& .MuiPagination-ul li:first-of-type": {
       marginRight: "8px",
     },
-    "& .MuiPagination-ul li:first-child button::after": {
+    "& .MuiPagination-ul li:first-of-type button::after": {
       content: "'Previous'",
       marginLeft: "8px",
     },
@@ -54,7 +54,7 @@ const PaginationContainer = ({ currentPage }) => {
   return (
     <div className={styles.container}>
       <StyledPagination
-        count={20}
+        count={totalPages}
         page={+currentPage}
         boundaryCount={countsValue}
         siblingCount={countsValue}

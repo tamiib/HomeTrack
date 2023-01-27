@@ -4,8 +4,13 @@ import PageTitle from "@/components/PageTitle/PageTitle";
 import Layout from "@/components/Layout/Layout";
 import BlogPosts from "@/components/BlogPosts/BlogPosts";
 import PaginationContainer from "@/components/PaginationContainer/PaginationContainer";
+import { getPaginatedPosts } from "@/lib/api";
+import { CONSTANTS } from "@/shared/constants";
 
-const BlogsPage = () => {
+
+
+const BlogsPage = ({ blogPosts, totalPages }) => {
+
   return (
     <>
       <Layout activeTab="blog">
@@ -16,11 +21,23 @@ const BlogsPage = () => {
           desktopImage={desktopImage}
           mobileImage={mobileImage}
         />
-        <BlogPosts />
-        <PaginationContainer currentPage={1}/>
+        <BlogPosts blogPosts={blogPosts}/>
+        <PaginationContainer currentPage={1} totalPages={totalPages}/>
       </Layout>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const data = await getPaginatedPosts(1);
+  const totalPages = Math.ceil(data.total / CONSTANTS.pagination.pageSize);
+
+  return {
+    props: {
+      blogPosts: data.items,
+      totalPages
+    }
+  }
+}
 
 export default BlogsPage;

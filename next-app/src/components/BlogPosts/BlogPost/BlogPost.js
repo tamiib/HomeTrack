@@ -2,15 +2,15 @@ import Button from "@/components/Button/Button";
 import Image from "next/legacy/image";
 import styles from "./BlogPost.module.scss";
 
-const BlogPost = ({ title, date, description, image }) => {
-  return (
+const BlogPost = ({ title, date, description, thumbnail }) => {
+  console.log(thumbnail);return (
     <div className={styles.container}>
       <div className={styles.image}>
         <Image
-          src={image.src}
+          src={thumbnail.url}
           layout="responsive"
-          width={`${image.width}px`}
-          height={`${image.height}px`}
+          width={`${thumbnail.width}px`}
+          height={`${thumbnail.height}px`}
           alt="Blog image"
         />
       </div>
