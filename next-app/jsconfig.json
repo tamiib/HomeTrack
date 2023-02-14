@@ -6,6 +6,7 @@
       "@assets/*": ["/public/assets/*"],
       "@styles/*": ["@/styles/*"],
       "@shared/*": ["@/shared/*"],
+      "@components/*": ["@/components/*"],
     }
   }
 }

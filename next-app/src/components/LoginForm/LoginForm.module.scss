@@ -1,0 +1,24 @@
+.container {
+    max-width: 1168px;
+    padding: 120px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    .image {
+        position: relative;
+        width: 100%;
+    }
+}
