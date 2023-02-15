@@ -92,7 +92,7 @@ const LoginForm = ({ type, title, description }) => {
                     I agree to the <span>Terms of use</span>
                   </>
                 ) : (
-                  <>Remember for 30 days"</>
+                  <>Remember for 30 days</>
                 )
               }
               control={control}
