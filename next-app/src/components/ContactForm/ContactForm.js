@@ -35,7 +35,7 @@ const ContactForm = () => {
         <p className={styles.description}>
           We will try to respond you inside 24 hour time frame.
           <br />
-          All of the fields marked with '*' are mandatory.
+          All of the fields marked with &apos;*&apos; are mandatory.
         </p>
 
         <form className={styles.form} onSubmit={handleSubmit(onSave)}>
