@@ -25,8 +25,8 @@ const Navigation = ({ activeTab }) => {
         ))}
       </ul>
       <div className={styles.btnsContainer}>
-        <Button to="/sign-up">Sign Up</Button>
-        <Button to="/log-in" styleClass="lightGreen">
+        <Button to="/signup">Sign Up</Button>
+        <Button to="/login" styleClass="lightGreen">
           Login
         </Button>
       </div>

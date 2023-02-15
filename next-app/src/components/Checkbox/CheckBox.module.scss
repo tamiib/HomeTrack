@@ -1,0 +1,32 @@
+@import "@/styles/variables.scss";
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    input {
+        outline: none;
+        border: 1px solid $gray;
+        border-radius: 4px;
+        accent-color: $light-green;
+
+        &:checked {
+            border: 1px solid $gray;
+            accent-color: $light-green;
+        }
+    }
+
+    label {
+        span {
+            color: $primary;
+            opacity: 1;
+            transition: all .2s;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+        }
+    }
+}

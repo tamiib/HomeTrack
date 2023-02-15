@@ -1,0 +1,83 @@
+@import "@/styles/variables.scss";
+
+.container {
+  max-width: 1168px;
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .formLinks {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0px;
+
+        .forgotLink {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 20px;
+          color: $primary;
+          opacity: 1;
+          transition: all 0.2s;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    .bottomText {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 20px;
+      color: $dark-gray;
+
+      .registerLink {
+        text-decoration: none;
+        color: $primary;
+        opacity: 1;
+        transition: all 0.2s;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    display: none;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    padding: 120px 24px;
+    grid-template-columns: 1fr 1fr;
+    .image {
+      display: block;
+    }
+  }
+}
