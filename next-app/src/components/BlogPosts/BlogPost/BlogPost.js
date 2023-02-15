@@ -3,7 +3,15 @@ import Image from "next/legacy/image";
 import styles from "./BlogPost.module.scss";
 
 const BlogPost = ({ title, date, description, thumbnail }) => {
-  console.log(thumbnail);return (
+  const dateNumber = new Date(date);
+
+  const formattedDate = dateNumber.toLocaleDateString("en-EN", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  })
+
+  return (
     <div className={styles.container}>
       <div className={styles.image}>
         <Image
@@ -16,7 +24,7 @@ const BlogPost = ({ title, date, description, thumbnail }) => {
       </div>
       <div className={styles.content}>
         <div className={styles.titleContainer}>
-          <div className="subtitle">{date}</div>
+          <div className="subtitle">{formattedDate}</div>
           <h2 className={styles.title}>{title}</h2>
         </div>
         <div className={styles.button}>

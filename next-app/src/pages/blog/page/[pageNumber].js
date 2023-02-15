@@ -30,6 +30,7 @@ const BlogsPage = ({ currentPage, blogPosts, totalPages }) => {
 
 export async function getStaticProps(context) {
   const { params } = context;
+  console.log(params);
   const pageNumber = params.pageNumber;
 
   const data = await getPaginatedPosts(pageNumber);
@@ -42,11 +43,13 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const totalPostsNumber = await getTotalPostsNumber();
-  const totalPages = Math.ceil(totalPostsNumber / CONSTANTS.pagination.pageSize);
+  const totalPages = Math.ceil(
+    totalPostsNumber / CONSTANTS.pagination.pageSize
+  );
   let paths = [];
 
-  for(let page = 2; i <= totalPages; page++) {
-    paths.push({ params: page.toString() });
+  for (let page = 2; page <= totalPages; page++) {
+    paths.push({ params: { pageNumber: page.toString() } });
   }
 
   return {
